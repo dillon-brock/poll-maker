@@ -1,6 +1,6 @@
 /* CSS for home page (index.html) */
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 main {
