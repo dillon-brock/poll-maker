@@ -61,7 +61,7 @@ button.action:active {
     background-color: rgb(153, 210, 156);
 }
 
-.poll-totals {
+.poll-results {
     display: grid;
     grid-template-areas:
         "question question"
@@ -160,6 +160,6 @@ button.action:active {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
-.polls-container .poll-totals {
+.polls-container .poll-results {
     max-width: 300px;
 }

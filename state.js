@@ -4,6 +4,8 @@ const state = {};
 // initialize state, also used in test
 export function initialize() {
     // What is the initial shape of state?
+    state.poll = null;
+    state.pastGames = [];
     // For example:
     // state.game = null;
     // state.pastGames = [];
