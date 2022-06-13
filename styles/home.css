@@ -1,4 +1,8 @@
 /* CSS for home page (index.html) */
+.hidden {
+    display: none;
+}
+
 main {
     display: grid;
     grid-template-columns: 400px 1fr;

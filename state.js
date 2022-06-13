@@ -5,6 +5,11 @@ const state = {};
 export function initialize() {
     // What is the initial shape of state?
     state.poll = null;
+    // state.poll = {
+    //     question: 'what am I doing?',
+    //     optionA: 'programming',
+    //     optionB: 'dying'
+    // };
     state.pastGames = [];
     // For example:
     // state.game = null;
