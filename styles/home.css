@@ -1,1 +1,165 @@
 /* CSS for home page (index.html) */
+main {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-areas: "current-poll past-polls";
+}
+
+#current-poll {
+    grid-area: current-poll;
+}
+
+#past-polls {
+    grid-area: past-polls;
+}
+
+h2 {
+    margin-left: 20px;
+}
+
+form {
+    display: grid;
+    row-gap: 20px;
+    text-align: center;
+    padding:  30px 50px;
+    width: 95%;
+    border-radius: 0.75rem;
+    color: white;
+    background-color: rgb(54, 99, 54);
+    border: 5px solid rgb(18, 51, 18);
+    text-transform: uppercase;
+    margin-left: 15px;
+
+}
+
+label {
+    display: contents;
+}
+
+input {
+    border-radius: 5px;
+    padding: 4px;
+}
+
+button.action {
+    width: 70%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: rgb(54, 99, 54);
+    border: 3px solid rgb(18, 51, 18);
+    border-radius: 0.5rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button.action:active {
+    background-color: rgb(153, 210, 156);
+}
+
+.poll-totals {
+    display: grid;
+    grid-template-areas:
+        "question question"
+        "optionA optionB"
+        "votesA votesB"
+    ;
+    justify-items: center;
+    border: 5px solid rgb(18, 51, 18);
+    border-radius: 0.75rem;
+    width: 95%;
+    color: rgb(18, 51, 18);
+    padding: 5px 0px 30px 0px;
+    font-size: 1.25rem;
+    margin-left: 15px;
+}
+
+.option {
+    font-size: 1.25rem;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid rgb(18, 51, 18);
+}
+
+.votes {
+    font-size: 2rem;
+}
+
+.question {
+    grid-area: question;
+}
+
+.option.a {
+    grid-area: optionA;
+}
+
+.option.b {
+    grid-area: optionB;
+}
+
+.votes.a {
+    grid-area: votesA;
+}
+
+.votes.b {
+    grid-area: votesB;
+}
+
+#vote-counter {
+    display: grid;
+    grid-template-areas: 
+        "optionA optionB"
+        "voteA voteB"
+        "removeA removeB"
+        "end end"
+    ;
+    width: 95%;
+    justify-items: center;
+    padding: 15px;
+    border: 5px solid rgb(18, 51, 18);
+    border-radius: 1rem;
+    margin-left: 15px;
+}
+
+.vote.a {
+    grid-area: voteA;
+}
+
+.vote.b {
+    grid-area: voteB; 
+}
+
+.remove.a {
+    grid-area: removeA;
+}
+
+.remove.b {
+    grid-area: removeB;
+}
+
+#end-poll {
+    grid-area: end;
+}
+
+.vote, .remove {
+    border: 3px solid rgb(18, 51, 18);
+    padding: 10px;
+    text-transform: uppercase;
+    background-color: rgb(54, 99, 54);
+    margin-bottom: 15px;
+    font-weight: 900;
+    color: white;
+}
+
+.polls-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.polls-container .poll-totals {
+    max-width: 300px;
+}

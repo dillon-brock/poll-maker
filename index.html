@@ -19,40 +19,43 @@
     </header>
 
     <main>
-        <section id="new-poll">
-            <form>
-                <label>
-                    Question:
-                    <input required name="question">
-                </label>
-                <label>
-                    Option A:
-                    <input required name="optionA">
-                </label>
-                <label>
-                    Option B:
-                    <input required name="optionB">
-                </label>
-                <button class="action">Start Poll</button>
-            </form>
-        </section>
-
-        <section class="poll-totals">
-            <h3 class="question">Question</h3>
-            <span class="option a">Option A</span>
-            <span class="votes a">0</span>
-            <span class="option b">Option B</span>
-            <span class="votes b">0</span>
-        </section>
-
-        <section class="vote-counter">
-            <span class="option a">Option A</span>
-            <button class="vote a">Vote</button>
-            <button class="remove-vote a">Remove Vote</button>
-            <span class="option b">Option B</span>
-            <button class="vote b">Vote</button>
-            <button class="remove-vote b">Remove Vote</button>
-            <button class="action" id="end-poll">End Poll</button> 
+        <section id="current-poll">
+            <h2>Current Poll</h2>
+            <section id="new-poll">
+                <form>
+                    <label>
+                        Question:
+                        <input required name="question">
+                    </label>
+                    <label>
+                        Option A:
+                        <input required name="optionA">
+                    </label>
+                    <label>
+                        Option B:
+                        <input required name="optionB">
+                    </label>
+                    <button class="action">Start Poll</button>
+                </form>
+            </section>
+    
+            <section class="poll-totals">
+                <h3 class="question">Question</h3>
+                <span class="option a">Option A</span>
+                <span class="votes a">0</span>
+                <span class="option b">Option B</span>
+                <span class="votes b">0</span>
+            </section>
+    
+            <section id="vote-counter">
+                <span class="option a">Option A</span>
+                <button class="vote a">Vote</button>
+                <button class="remove a">Remove Vote</button>
+                <span class="option b">Option B</span>
+                <button class="vote b">Vote</button>
+                <button class="remove b">Remove Vote</button>
+                <button class="action" id="end-poll">End Poll</button> 
+            </section>
         </section>
 
         <section id="past-polls">
