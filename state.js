@@ -46,3 +46,7 @@ export function endPoll() {
     state.pastPolls.push(state.poll);
     state.poll = null;
 }
+
+export function clearPolls() {
+    state.pastPolls = [];
+}

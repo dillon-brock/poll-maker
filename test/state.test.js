@@ -4,6 +4,7 @@ import state, {
     addVote,
     removeVote,
     endPoll,
+    clearPolls
     // import dispatch functions
 } from '../state.js';
 
@@ -100,4 +101,37 @@ test('end poll pushes poll to pastPolls array', (expect) => {
             votes: 1
         }
     }]);
+});
+
+test('clears polls from pastPolls array', (expect) => {
+
+    newPoll('what am I doing?', 'programming', 'crying');
+    addVote('A');
+    addVote('A');
+    addVote('A');
+    addVote('B');
+    addVote('B');
+
+    removeVote('A');
+    removeVote('A');
+    removeVote('B');
+
+    endPoll();
+
+    newPoll('what am I doing?', 'programming', 'crying');
+    addVote('A');
+    addVote('A');
+    addVote('A');
+    addVote('B');
+    addVote('B');
+
+    removeVote('A');
+    removeVote('A');
+    removeVote('B');
+
+    endPoll();
+
+    clearPolls();
+
+    expect.deepEqual(state.pastPolls, []);
 });
