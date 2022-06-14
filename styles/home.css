@@ -169,10 +169,10 @@ span.poll-results {
     border: 3px solid rgb(18, 51, 18);
     padding: 10px;
     text-transform: uppercase;
-    background-color: rgb(54, 99, 54);
+    background-color: rgb(37, 95, 79);
     margin-bottom: 15px;
     font-weight: 900;
-    color: white;
+    color: rgb(255, 240, 207);
     border-radius: 5px;
 }
 
