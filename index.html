@@ -18,7 +18,53 @@
         <h1>Web MVC UI</h1>
     </header>
 
-    <main></main>
+    <main>
+        <section id="current-poll">
+            <h2 id="current-title">Current Poll</h2>
+            <section id="new-poll">
+                <form>
+                    <label>
+                        Question:
+                        <input required name="question">
+                    </label>
+                    <label>
+                        Option A:
+                        <input required name="optionA">
+                    </label>
+                    <label>
+                        Option B:
+                        <input required name="optionB">
+                    </label>
+                    <button class="action">Start Poll</button>
+                </form>
+            </section>
+    
+            <section id="current-poll-results">
+            </section>
+    
+            <section id="vote-counter">
+                <span class="option a">Option A</span>
+                <button class="vote a">Vote</button>
+                <button class="remove a">Remove Vote</button>
+                <span class="option b">Option B</span>
+                <button class="vote b">Vote</button>
+                <button class="remove b">Remove Vote</button>
+                <button class="action" id="end-poll">End Poll</button> 
+            </section>
+                <div id="button-container">
+                    <button id="clear-polls">Clear Past Polls</button>
+                </div>
+            </section>
+
+
+        <section id="past-polls">
+            <h2>Past Polls</h2>
+            <div class="polls-container">
+                
+            </div>
+        </section>
+
+    </main>
 
     <footer>&copy;2021 Aspiring Software Developer</footer>
 

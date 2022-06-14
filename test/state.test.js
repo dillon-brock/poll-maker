@@ -1,6 +1,10 @@
 import state, {
     initialize,
-    // import dispatch functions
+    newPoll,
+    addVote,
+    removeVote,
+    endPoll,
+    clearPolls
 } from '../state.js';
 
 // make sure state is at known starting point
@@ -8,14 +12,125 @@ QUnit.module('state', { beforeEach: initialize });
 
 const test = QUnit.test;
 
-test('the first state test...', (expect) => {
-    // what is the initial expected state?
+test('creates a new poll with specified question and options', (expect) => {
+    newPoll('what am I doing?', 'programming', 'crying');
+    expect.deepEqual(state.poll, {
+        question: 'what am I doing?',
+        optionA: {
+            option: 'programming',
+            votes: 0
+        },
+        optionB: {
+            option: 'crying',
+            votes: 0
+        }
+    });
+});
 
-    // use the action
+test('adds a vote to corresponding option', (expect) => {
 
-    // what should the state be now?
+    newPoll('what am I doing?', 'programming', 'crying');
+    addVote('A');
+    addVote('A');
+    addVote('A');
+    addVote('B');
+    addVote('B');
 
+    expect.deepEqual(state.poll, {
+        question: 'what am I doing?',
+        optionA: {
+            option: 'programming',
+            votes: 3
+        },
+        optionB: {
+            option: 'crying',
+            votes: 2
+        }
+    });
+});
 
-    // remove this line when starting your test
-    expect.deepEqual(state, {});
+test('removes a vote from corresponding option', (expect) => {
+
+    newPoll('what am I doing?', 'programming', 'crying');
+    addVote('A');
+    addVote('A');
+    addVote('A');
+    addVote('B');
+    addVote('B');
+
+    removeVote('A');
+    removeVote('A');
+    removeVote('B');
+
+    expect.deepEqual(state.poll, {
+        question: 'what am I doing?',
+        optionA: {
+            option: 'programming',
+            votes: 1
+        },
+        optionB: {
+            option: 'crying',
+            votes: 1
+        }
+    });
+});
+
+test('end poll pushes poll to pastPolls array', (expect) => {
+    newPoll('what am I doing?', 'programming', 'crying');
+    addVote('A');
+    addVote('A');
+    addVote('A');
+    addVote('B');
+    addVote('B');
+
+    removeVote('A');
+    removeVote('A');
+    removeVote('B');
+
+    endPoll();
+
+    expect.deepEqual(state.pastPolls, [{
+        question: 'what am I doing?',
+        optionA: {
+            option: 'programming',
+            votes: 1
+        },
+        optionB: {
+            option: 'crying',
+            votes: 1
+        }
+    }]);
+});
+
+test('clears polls from pastPolls array', (expect) => {
+
+    newPoll('what am I doing?', 'programming', 'crying');
+    addVote('A');
+    addVote('A');
+    addVote('A');
+    addVote('B');
+    addVote('B');
+
+    removeVote('A');
+    removeVote('A');
+    removeVote('B');
+
+    endPoll();
+
+    newPoll('what am I doing?', 'programming', 'crying');
+    addVote('A');
+    addVote('A');
+    addVote('A');
+    addVote('B');
+    addVote('B');
+
+    removeVote('A');
+    removeVote('A');
+    removeVote('B');
+
+    endPoll();
+
+    clearPolls();
+
+    expect.deepEqual(state.pastPolls, []);
 });
