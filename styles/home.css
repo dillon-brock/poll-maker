@@ -82,6 +82,10 @@ button.action:active {
     margin-left: 15px;
 }
 
+#current-poll-results {
+    width: 100%;
+}
+
 .option {
     font-size: 1.25rem;
     padding-bottom: 10px;

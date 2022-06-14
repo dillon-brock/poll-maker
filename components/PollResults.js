@@ -1,4 +1,4 @@
-import state from '../state.js';
+import resultBox from './resultBox.js';
 
 export default function createPollResults(root) {
     return ({ poll }) => {
@@ -8,14 +8,9 @@ export default function createPollResults(root) {
         }
         root.classList.remove('hidden');
 
-        const question = root.querySelector('h3');
-        const [optionA, optionB] = root.querySelectorAll('.option');
-        const [votesA, votesB] = root.querySelectorAll('.votes');
+        const results = resultBox({ poll });
 
-        question.textContent = state.poll.question;
-        optionA.textContent = state.poll.optionA.option;
-        optionB.textContent = state.poll.optionB.option;
-        votesA.textContent = state.poll.optionA.votes;
-        votesB.textContent = state.poll.optionB.votes;
+        root.innerHTML = '';
+        root.append(results);
     };
 }
