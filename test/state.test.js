@@ -5,7 +5,6 @@ import state, {
     removeVote,
     endPoll,
     clearPolls
-    // import dispatch functions
 } from '../state.js';
 
 // make sure state is at known starting point
