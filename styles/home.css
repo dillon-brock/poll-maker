@@ -80,6 +80,11 @@ button.action:active {
     padding: 5px 0px 30px 0px;
     font-size: 1.25rem;
     margin-left: 15px;
+    text-align: center;
+}
+
+span.poll-results {
+    width: 85%;
 }
 
 #current-poll-results {
@@ -91,6 +96,7 @@ button.action:active {
     padding-bottom: 10px;
     margin-bottom: 25px;
     border-bottom: 2px solid rgb(18, 51, 18);
+    width: 70%;
 }
 
 .votes {
@@ -165,9 +171,12 @@ button.action:active {
 
 .polls-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    row-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .polls-container .poll-results {
-    max-width: 300px;
+    min-width: 300px;
+    text-align: center;
 }
+

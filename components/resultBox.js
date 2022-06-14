@@ -5,7 +5,7 @@ export default function resultBox({ poll }) {
 
     const question = document.createElement('h3');
     question.classList.add('question');
-    question.textConent = poll.question;
+    question.textContent = poll.question;
 
     const optionA = document.createElement('span');
     optionA.classList.value = 'option a';
