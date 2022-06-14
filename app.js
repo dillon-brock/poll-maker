@@ -1,5 +1,5 @@
 // import utilities
-import state from './state.js';
+import state, { newPoll } from './state.js';
 // import component creators
 import createNewPoll from './components/NewPoll.js';
 import createPollResults from './components/PollResults.js';
@@ -9,7 +9,12 @@ import createVoteCounter from './components/VoteCounter.js';
 // Create each component: 
 // - pass in the root element via querySelector
 // - pass any needed handler functions as properties of an actions object 
-const NewPoll = createNewPoll(document.querySelector('#new-poll'));
+const NewPoll = createNewPoll(document.querySelector('#new-poll'), {
+    handleNewPoll(question, optionA, optionB) {
+        newPoll(question, optionA, optionB);
+        display();
+    }
+});
 const PollResults = createPollResults(document.querySelector('#current-poll-results'));
 const VoteCounter = createVoteCounter(document.querySelector('#vote-counter'));
 
