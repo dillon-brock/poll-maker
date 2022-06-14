@@ -7,6 +7,8 @@ main {
     display: grid;
     grid-template-columns: 400px 1fr;
     grid-template-areas: "current-poll past-polls";
+    background-image: url('../assets/gradient-background.png');
+    background-size: cover;
 }
 
 #current-poll {
@@ -31,9 +33,9 @@ form {
     padding:  30px 50px;
     width: 95%;
     border-radius: 0.75rem;
-    color: white;
-    background-color: rgb(54, 99, 54);
-    border: 5px solid rgb(18, 51, 18);
+    color: rgb(255, 240, 207);
+    background-color: rgb(37, 95, 79);
+    border: 5px solid rgb(18, 51, 49);
     text-transform: uppercase;
     margin-left: 10px;
 
@@ -52,10 +54,10 @@ button.action {
     width: 70%;
     margin: 10px auto;
     padding: 10px;
-    background-color: white;
+    background-color: rgb(255, 240, 207);
     text-transform: uppercase;
     font-weight: 900;
-    color: rgb(54, 99, 54);
+    color: rgb(37, 95, 79);
     border: 3px solid rgb(18, 51, 18);
     border-radius: 0.5rem;
 }
@@ -185,8 +187,8 @@ span.poll-results {
     width: 50%;
     text-transform: uppercase;
     font-weight: 900;
-    color: white;
-    background-color: rgb(54, 99, 54);
+    color: rgb(255, 240, 207);
+    background-color: rgb(37, 95, 79);
     border: 3px solid rgb(18, 51, 18);
     border-radius: 0.5rem;
 }
@@ -200,5 +202,6 @@ span.poll-results {
 .polls-container .poll-results {
     min-width: 300px;
     text-align: center;
+    background-color: rgba(255, 240, 207, 0.6);
 }
 

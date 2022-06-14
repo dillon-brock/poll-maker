@@ -1,4 +1,4 @@
-// import utilities
+// import state and dispatch functions
 import state, { newPoll, addVote, removeVote, endPoll, clearPolls } from './state.js';
 // import component creators
 import createNewPoll from './components/NewPoll.js';
@@ -6,7 +6,6 @@ import createPollResults from './components/PollResults.js';
 import createVoteCounter from './components/VoteCounter.js';
 import createPastPolls from './components/PastPolls.js';
 import createClearPolls from './components/ClearPolls.js';
-// import state and dispatch functions
 
 // Create each component: 
 // - pass in the root element via querySelector
@@ -40,7 +39,7 @@ const ClearPolls = createClearPolls(document.querySelector('#button-container'),
         display();
     }
 });
-// Roll-up display function that renders (calls with state) each component
+
 function display() {
     // Call each component passing in props that are the pieces of state this component needs
     NewPoll({ poll: state.poll });
