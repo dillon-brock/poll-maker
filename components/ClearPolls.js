@@ -1,6 +1,6 @@
 export default function createClearPolls(root) {
-    return ({ pastPolls }) => {
-        if (pastPolls.length > 0) {
+    return ({ polls }) => {
+        if (polls.length === 0) {
             root.classList.add('hidden');
             return;
         }

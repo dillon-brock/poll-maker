@@ -5,6 +5,7 @@ import createNewPoll from './components/NewPoll.js';
 import createPollResults from './components/PollResults.js';
 import createVoteCounter from './components/VoteCounter.js';
 import createPastPolls from './components/PastPolls.js';
+import createClearPolls from './components/ClearPolls.js';
 // import state and dispatch functions
 
 // Create each component: 
@@ -33,6 +34,7 @@ const VoteCounter = createVoteCounter(document.querySelector('#vote-counter'), {
 });
 const PastPolls = createPastPolls(document.querySelector('.polls-container'));
 
+const ClearPolls = createClearPolls(document.querySelector('#button-container'));
 // Roll-up display function that renders (calls with state) each component
 function display() {
     // Call each component passing in props that are the pieces of state this component needs
@@ -40,6 +42,7 @@ function display() {
     PollResults({ poll: state.poll });
     VoteCounter({ poll: state.poll });
     PastPolls({ polls: state.pastPolls });
+    ClearPolls({ polls: state.pastPolls });
 }
 
 // Call display on page load
