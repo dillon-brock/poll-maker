@@ -174,9 +174,14 @@ span.poll-results {
     border-radius: 5px;
 }
 
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+
 #clear-polls {
-    margin: 40px auto;
     padding: 15px 0px;
+    margin-top: 40px;
     width: 50%;
     text-transform: uppercase;
     font-weight: 900;
