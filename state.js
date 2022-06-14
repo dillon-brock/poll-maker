@@ -28,3 +28,21 @@ export function newPoll(question, aOption, bOption) {
         optionB: { option: bOption, votes: 0 },
     };
 }
+
+export function addVote(option) {
+    if (option === 'A') {
+        state.poll.optionA.votes++;
+    }
+    if (option === 'B') {
+        state.poll.optionB.votes++;
+    }
+}
+
+export function removeVote(option) {
+    if (option === 'A' && state.poll.optionA.votes > 0) {
+        state.poll.optionA.votes--;
+    }
+    if (option === 'B' && state.poll.optionB.votes > 0) {
+        state.poll.optionB.votes--;
+    }
+}
