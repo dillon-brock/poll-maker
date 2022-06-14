@@ -1,4 +1,4 @@
-import resultBox from './resultBox.js';
+import resultBox from './ResultBox.js';
 
 export default function createPollResults(root) {
     return ({ poll }) => {

@@ -1,5 +1,5 @@
 // import utilities
-import state, { newPoll, addVote, removeVote } from './state.js';
+import state, { newPoll, addVote, removeVote, endPoll } from './state.js';
 // import component creators
 import createNewPoll from './components/NewPoll.js';
 import createPollResults from './components/PollResults.js';
@@ -23,6 +23,10 @@ const VoteCounter = createVoteCounter(document.querySelector('#vote-counter'), {
     },
     handleRemoveVote: (option) => {
         removeVote(option);
+        display();
+    },
+    handleEndPoll: () => {
+        endPoll();
         display();
     }
 });

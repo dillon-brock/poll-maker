@@ -10,7 +10,7 @@ export function initialize() {
     //     optionA: { option: 'programming', votes: 0 },
     //     optionB: { option: 'crying', votes: 0 }
     // };
-    state.pastGames = [];
+    state.pastPolls = [];
     // For example:
     // state.game = null;
     // state.pastGames = [];
@@ -45,4 +45,9 @@ export function removeVote(option) {
     if (option === 'B' && state.poll.optionB.votes > 0) {
         state.poll.optionB.votes--;
     }
+}
+
+export function endPoll() {
+    state.pastPolls.push(state.poll);
+    state.poll = null;
 }
