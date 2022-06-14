@@ -1,6 +1,25 @@
 import state from '../state.js';
 
-export default function createVoteCounter(root) {
+export default function createVoteCounter(root, { handleAddVote, handleRemoveVote }) {
+
+    const [aVoteButton, aRemoveButton, bVoteButton, bRemoveButton, endPollButton] = root.querySelectorAll('button');
+
+    aVoteButton.addEventListener('click', () => {
+        handleAddVote('A');
+    });
+
+    aRemoveButton.addEventListener('click', () => {
+        handleRemoveVote('A');
+    });
+
+    bVoteButton.addEventListener('click', () => {
+        handleAddVote('B');
+    });
+
+    bRemoveButton.addEventListener('click', () => {
+        handleRemoveVote('B');
+    });
+
 
     return ({ poll }) => {
         if (!poll) {

@@ -1,5 +1,5 @@
 // import utilities
-import state, { newPoll } from './state.js';
+import state, { newPoll, addVote, removeVote } from './state.js';
 // import component creators
 import createNewPoll from './components/NewPoll.js';
 import createPollResults from './components/PollResults.js';
@@ -16,7 +16,16 @@ const NewPoll = createNewPoll(document.querySelector('#new-poll'), {
     }
 });
 const PollResults = createPollResults(document.querySelector('#current-poll-results'));
-const VoteCounter = createVoteCounter(document.querySelector('#vote-counter'));
+const VoteCounter = createVoteCounter(document.querySelector('#vote-counter'), {
+    handleAddVote: (option) => {
+        addVote(option);
+        display();
+    },
+    handleRemoveVote: (option) => {
+        removeVote(option);
+        display();
+    }
+});
 
 // Roll-up display function that renders (calls with state) each component
 function display() {
